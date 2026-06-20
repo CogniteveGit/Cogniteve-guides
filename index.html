@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COGNITEVE_MD | Free Guides by Dr. Ijay</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --parchment: #F5F0E8;
+    --parchment-dark: #EDE6D6;
+    --ink: #1C1A17;
+    --ink-light: #4A4540;
+    --gold: #B8924A;
+    --gold-light: #D4AF72;
+    --cream: #FAF7F2;
+    --accent-red: #8B3A3A;
+    --border: #D9CFC0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+  }
+
+  /* HEADER */
+  .site-header {
+    background: var(--ink);
+    color: var(--parchment);
+    padding: 18px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--gold-light);
+  }
+
+  .logo span {
+    color: var(--parchment);
+    font-weight: 300;
+  }
+
+  .header-tag {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    opacity: 0.8;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--ink);
+    color: var(--parchment);
+    padding: 70px 40px 60px;
+    text-align: center;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .hero-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 18px;
+    font-weight: 500;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    font-weight: 300;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+    color: #C8C0B0;
+    max-width: 520px;
+    margin: 0 auto 30px;
+    font-weight: 300;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    font-weight: 500;
+  }
+
+  /* GUIDE NAV */
+  .guide-nav {
+    background: var(--cream);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow-x: auto;
+    flex-wrap: wrap;
+  }
+
+  .guide-nav-label {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    white-space: nowrap;
+    margin-right: 6px;
+    flex-shrink: 0;
+  }
+
+  .guide-nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 16px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--ink-light);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    background: var(--parchment);
+    white-space: nowrap;
+    transition: all 0.2s;
+    border-radius: 2px;
+  }
+
+  .guide-nav a:hover {
+    color: var(--ink);
+    border-color: var(--gold);
+    background: var(--parchment-dark);
+  }
+
+  .guide-nav a .nav-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem;
+    color: var(--gold);
+    font-weight: 400;
+  }
+
+  /* MAIN LAYOUT */
+  .main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  /* SECTION HEADER */
+  .section-header {
+    padding: 60px 0 36px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 40px;
+  }
+
+  .section-tag {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-tag::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 40px;
+    background: var(--gold);
+    opacity: 0.4;
+  }
+
+  .section-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  .section-header h2 em {
+    font-style: italic;
+    color: var(--ink-light);
+  }
+
+  .section-intro {
+    font-size: 0.9rem;
+    color: var(--ink-light);
+    max-width: 580px;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  .dr-note {
+    background: var(--parchment-dark);
+    border-left: 3px solid var(--gold);
+    padding: 16px 20px;
+    margin: 20px 0 0;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--ink-light);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+  }
+
+  /* TOP 10 CARDS */
+  .top10-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .top10-item {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+    padding: 28px 0;
+    transition: background 0.2s;
+  }
+
+  .top10-item:hover {
+    background: var(--cream);
+    margin: 0 -24px;
+    padding: 28px 24px;
+  }
+
+  .item-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--gold);
+    opacity: 0.6;
+    line-height: 1;
+    padding-top: 4px;
+  }
+
+  .item-content h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+  }
+
+  .item-content p {
+    font-size: 0.85rem;
+    color: var(--ink-light);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  .item-tag {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    margin-bottom: 8px;
+    border-radius: 2px;
+  }
+
+  .tag-body { background: #E8F0E8; color: #2D5A2D; }
+  .tag-mind { background: #E8EAF0; color: #2D3A5A; }
+  .tag-doctor { background: #F0EAE8; color: #5A2D2D; }
+  .tag-nutrition { background: #F0F0E8; color: #4A4A1A; }
+  .tag-system { background: #EAE8F0; color: #3A2D5A; }
+
+  /* DIVIDER */
+  .guide-divider {
+    margin: 60px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .guide-divider::before,
+  .guide-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .guide-divider span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: var(--gold);
+    opacity: 0.6;
+  }
+
+  /* LABS TABLE */
+  .labs-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .lab-row {
+    display: grid;
+    grid-template-columns: 1fr 140px 1fr;
+    gap: 16px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+
+  .lab-row:first-child {
+    border-top: 1px solid var(--border);
+  }
+
+  .lab-header-row {
+    display: grid;
+    grid-template-columns: 1fr 140px 1fr;
+    gap: 16px;
+    padding: 10px 0;
+    margin-bottom: 4px;
+  }
+
+  .lab-header-row span {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .lab-name {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .lab-full {
+    font-size: 0.75rem;
+    color: var(--ink-light);
+    font-weight: 300;
+  }
+
+  .lab-range {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .lab-range small {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    color: var(--ink-light);
+    font-weight: 400;
+    margin-top: 2px;
+  }
+
+  .lab-why {
+    font-size: 0.82rem;
+    color: var(--ink-light);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .lab-flag {
+    display: inline-block;
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 2px;
+    margin-bottom: 6px;
+  }
+
+  .flag-critical { background: #F9E8E8; color: var(--accent-red); }
+  .flag-metabolic { background: #E8F0F9; color: #1A4A7A; }
+  .flag-cardiac { background: #F9EEE8; color: #7A3A1A; }
+  .flag-kidney { background: #E8F9EE; color: #1A5A30; }
+  .flag-liver { background: #F9F5E8; color: #5A4A1A; }
+  .flag-blood { background: #F0E8F9; color: #4A1A7A; }
+
+  /* CHEAT SHEET */
+  .cheatsheet-intro {
+    background: var(--ink);
+    color: var(--parchment);
+    padding: 28px 32px;
+    margin-bottom: 32px;
+    border-left: 4px solid var(--gold);
+  }
+
+  .cheatsheet-intro p {
+    font-size: 0.88rem;
+    line-height: 1.7;
+    font-weight: 300;
+    color: #C8C0B0;
+  }
+
+  .cheatsheet-intro strong {
+    color: var(--gold-light);
+    font-weight: 500;
+  }
+
+  .phase-block {
+    margin-bottom: 36px;
+  }
+
+  .phase-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .phase-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.25;
+  }
+
+  .checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .check-item {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 12px;
+    padding: 14px 16px;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    align-items: start;
+  }
+
+  .check-item:nth-child(even) {
+    background: var(--parchment);
+  }
+
+  .check-box {
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid var(--gold);
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .check-text strong {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 3px;
+  }
+
+  .check-text span {
+    font-size: 0.78rem;
+    color: var(--ink-light);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  .warning-box {
+    background: #FDF0F0;
+    border: 1px solid #E8CACA;
+    border-left: 4px solid var(--accent-red);
+    padding: 20px 24px;
+    margin: 28px 0;
+  }
+
+  .warning-box .warning-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent-red);
+    margin-bottom: 10px;
+  }
+
+  .warning-box ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .warning-box ul li {
+    font-size: 0.85rem;
+    color: #5A2020;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-weight: 400;
+  }
+
+  .warning-box ul li::before {
+    content: '→';
+    color: var(--accent-red);
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  /* FOOTER */
+  .guide-footer {
+    background: var(--ink);
+    color: var(--parchment);
+    padding: 48px 40px;
+    text-align: center;
+    margin-top: 60px;
+  }
+
+  .guide-footer .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--gold-light);
+    letter-spacing: 0.12em;
+    margin-bottom: 12px;
+  }
+
+  .guide-footer p {
+    font-size: 0.78rem;
+    color: #888070;
+    font-weight: 300;
+    max-width: 500px;
+    margin: 0 auto 6px;
+    line-height: 1.7;
+  }
+
+  .guide-footer .disclaimer {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #333028;
+    font-size: 0.7rem;
+    color: #555048;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 620px) {
+    .site-header { padding: 16px 20px; }
+    .hero { padding: 50px 20px 44px; }
+    .guide-nav { padding: 0 20px; }
+    .main { padding: 0 16px 60px; }
+
+    .lab-row {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    .lab-header-row { display: none; }
+    .lab-range::before { content: 'Normal range: '; font-size: 0.65rem; color: var(--ink-light); font-weight: 600; }
+
+    .check-item { grid-template-columns: 24px 1fr; }
+    .guide-footer { padding: 36px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="logo">COGNITEVE<span>_MD</span></div>
+  <div class="header-tag">Free Resource Library</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">By Dr. Ijay · Hospitalist Physician</div>
+  <h1>Medicine shouldn't be a<br><em>mystery you navigate alone.</em></h1>
+  <p>Three free guides to help you understand your body, read your results, and stay out of the hospital — from a doctor who actually cares about both.</p>
+  <div class="hero-badge">Free · No sign-up required</div>
+</section>
+
+<!-- GUIDE NAV -->
+<nav class="guide-nav">
+  <span class="guide-nav-label">Jump to ↓</span>
+  <a href="#selfcare"><span class="nav-num">01</span> Dr. Ijay's Self-Care Stack</a>
+  <a href="#labs"><span class="nav-num">02</span> Top 10 Labs to Know</a>
+  <a href="#discharge"><span class="nav-num">03</span> Discharge Paper Decoder</a>
+</nav>
+
+<script>
+  document.documentElement.style.scrollBehavior = 'smooth';
+</script>
+
+<!-- MAIN CONTENT -->
+<main class="main">
+
+  <!-- ===== GUIDE 1: SELF-CARE STACK ===== -->
+  <section id="selfcare">
+    <div class="section-header">
+      <div class="section-tag">Guide 01</div>
+      <h2>Dr. Ijay's Self-Care Stack:<br><em>What I Actually Use</em></h2>
+      <p class="section-intro">I spend my nights admitting patients for conditions that are often preventable. These are the 10 things I actually do — not just tell my patients to do — to protect my own health.</p>
+      <div class="dr-note">"I'm a hospitalist. I see what happens when we ignore our bodies long enough. These aren't trendy wellness tips — they're what actually moves the needle." — Dr. Ijay</div>
+    </div>
+
+    <div class="top10-list">
+
+      <div class="top10-item">
+        <div class="item-number">01</div>
+        <div class="item-content">
+          <div class="item-tag tag-body">Body</div>
+          <h3>I protect my sleep like it's a clinical order</h3>
+          <p>As a nocturnist, my sleep schedule is unconventional — but non-negotiable. Sleep deprivation increases cortisol, impairs glucose metabolism, and raises cardiovascular risk. I use blackout curtains, a sleep mask, phone on Do Not Disturb, and I treat my sleep window like a prescription I'm filling.</p>
+        </div>
+      </div>
+
+      <div class="top10-item">
+        <div class="item-number">02</div>
+        <div class="item-content">
+          <div class="item-tag tag-nutrition">Nutrition</div>
+          <h3>I eat protein at every single meal</h3>
+          <p>Not for aesthetics — for blood sugar stability, satiety, and muscle preservation. I aim for 25–30g per meal. On night shifts, this means prepping high-protein snacks in advance so I'm not reaching for vending machine options at 3am.</p>
+        </div>
+      </div>
+
+      <div class="top10-item">
+        <div class="item-number">03</div>
+        <div class="item-content">
+          <div class="item-tag tag-body">Body</div>
+          <h3>I hydrate before I caffeinate</h3>
+          <p>16–24 oz of water before any coffee — every day. By the time we feel thirsty, we're already mildly dehydrated. Dehydration affects cognition, mood, kidney function, and energy. As a physician, I need to be sharp. Water first is non-negotiable.</p>
+        </div>
+      </div>
+
+      <div class="top10-item">
+        <div class="item-number">04</div>
+        <div class="item-content">
+          <div class="item-tag tag-doctor">Preventive</div>
+          <h3>I actually go to my own doctor</h3>
+          <p>Physicians are notoriously bad patients. I have a PCP. I go. I get my labs. I have a dentist. I stay current on my screenings. You cannot advocate for your patients' preventive care while skipping your own. It's also humbling — and important.</p>
+        </div>
+      </div>
+
+      <div class="top10-item">
+        <div class="item-number">05</div>
+        <div class="item-content">
+          <div class="item-tag tag-mind">Mind</div>
+          <h3>I take my days off seriously</h3>
+          <p>Time off isn't a reward — it's a physiological reset. I protect post-call days and off days from work emails, clinical thinking, and content obligations when I can. Burnout is real, and recovery happens in the margins.</p>
+        </div>
+      </div>
+
+      <div class="top10-item">
+        <div class="item-number">06</div>
+        <div class="item-content">
+          <div class="item-tag tag-body">Body</div>
+          <h3>I move my body even when I don't want to</h3>
+          <p>I walk miles during a night shift, but that's not exercise — that's occupation. Intentional movement (even 20–30 minutes) improves mood, insulin sensitivity, cardiovascular health, and sleep quality. I don't wait to feel motivated. I go anyway.</p>
+        </div>
+      </div>
+
+      <div class="top10-item">
+        <div class="item-number">07</div>
+        <div class="item-content">
+          <div class="item-tag tag-mind">Mind</div>
+          <h3>I limit doom-scrolling before sleep</h3>
+          <p>Blue light and stimulating content before sleep suppress melatonin and delay sleep onset. I try to put my phone down 30–60 minutes before sleeping. I'm not perfect at this — but I'm intentional about it, because I've seen what chronic sleep disruption does to the body.</p>
+        </div>
+      </div>
+
+      <div class="top10-item">
+        <div class="item-number">08</div>
+        <div class="item-content">
+          <div class="item-tag tag-mind">Mind</div>
+          <h3>I protect my relationships — especially family time</h3>
+          <p>Medicine will take everything you give it and ask for more. I've learned to set boundaries that protect the people who matter most. Family time isn't what's left after work — it's something I schedule and defend. Healthy relationships are genuinely protective against burnout, depression, and even cardiovascular disease. Connection is medicine.</p>
+        </div>
+      </div>
+
+      <div class="top10-item">
+        <div class="item-number">09</div>
+        <div class="item-content">
+          <div class="item-tag tag-system">Systems</div>
+          <h3>I keep a running list of my own medications and allergies</h3>
+          <p>If something happens to me, I want every provider who touches me to have accurate information immediately. A simple note in my phone: current medications, allergies, medical history, emergency contacts. It takes 10 minutes and it could save your life.</p>
+        </div>
+      </div>
+
+      <div class="top10-item">
+        <div class="item-number">10</div>
+        <div class="item-content">
+          <div class="item-tag tag-mind">Mind</div>
+          <h3>I process the weight of this work</h3>
+          <p>Medicine is heavy. I witness loss, difficult conversations, and moral complexity regularly. I talk to people I trust. I journal. I recognize when I'm carrying too much. Emotional processing isn't soft — it's essential for longevity in this field and in life.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="guide-divider"><span>✦</span></div>
+
+  <!-- ===== GUIDE 2: TOP 10 LABS ===== -->
+  <section id="labs">
+    <div class="section-header">
+      <div class="section-tag">Guide 02</div>
+      <h2>Top 10 Lab Values<br><em>Everyone Should Know</em></h2>
+      <p class="section-intro">Your lab results contain a story about your health — but most people never learn to read it. Here are the 10 most important values, what they mean, and why they matter.</p>
+      <div class="dr-note">"When my patients ask 'are my labs normal?' I want them to already understand what normal means. Knowledge is the first line of defense." — Dr. Ijay</div>
+    </div>
+
+    <div class="labs-grid">
+      <div class="lab-header-row">
+        <span>Lab Test</span>
+        <span>Normal Range</span>
+        <span>Why It Matters</span>
+      </div>
+
+      <div class="lab-row">
+        <div>
+          <div class="lab-flag flag-metabolic">Metabolic</div>
+          <div class="lab-name">Hemoglobin A1c</div>
+          <div class="lab-full">HbA1c / Glycated Hemoglobin</div>
+        </div>
+        <div class="lab-range">
+          &lt; 5.7%
+          <small>Pre-diabetes: 5.7–6.4%<br>Diabetes: ≥ 6.5%</small>
+        </div>
+        <div class="lab-why">Reflects your average blood sugar over the past 3 months. One of the most important tests for catching diabetes early — before symptoms appear. Everyone over 35 should know this number.</div>
+      </div>
+
+      <div class="lab-row">
+        <div>
+          <div class="lab-flag flag-cardiac">Cardiac</div>
+          <div class="lab-name">LDL Cholesterol</div>
+          <div class="lab-full">Low-Density Lipoprotein</div>
+        </div>
+        <div class="lab-range">
+          &lt; 100 mg/dL
+          <small>Optimal for most adults.<br>Higher risk = lower target.</small>
+        </div>
+        <div class="lab-why">The "bad" cholesterol that builds up in artery walls and drives heart attacks and strokes. Your target depends on your overall cardiovascular risk — ask your doctor what your personal goal should be.</div>
+      </div>
+
+      <div class="lab-row">
+        <div>
+          <div class="lab-flag flag-kidney">Kidney</div>
+          <div class="lab-name">eGFR</div>
+          <div class="lab-full">Estimated Glomerular Filtration Rate</div>
+        </div>
+        <div class="lab-range">
+          ≥ 60 mL/min
+          <small>Declining trend matters<br>as much as the number.</small>
+        </div>
+        <div class="lab-why">Measures how well your kidneys are filtering waste. Chronic kidney disease is often silent until advanced. Catching a declining eGFR early allows you to slow or stop the damage — lifestyle and medication both help.</div>
+      </div>
+
+      <div class="lab-row">
+        <div>
+          <div class="lab-flag flag-blood">Blood</div>
+          <div class="lab-name">Hemoglobin</div>
+          <div class="lab-full">Hgb (part of CBC)</div>
+        </div>
+        <div class="lab-range">
+          12–17.5 g/dL
+          <small>Range varies by sex<br>and age.</small>
+        </div>
+        <div class="lab-why">Carries oxygen to every cell in your body. Low hemoglobin = anemia, which causes fatigue, shortness of breath, and brain fog. Many people have no idea they're anemic until a routine lab reveals it.</div>
+      </div>
+
+      <div class="lab-row">
+        <div>
+          <div class="lab-flag flag-metabolic">Metabolic</div>
+          <div class="lab-name">Fasting Glucose</div>
+          <div class="lab-full">Blood Sugar (Fasting)</div>
+        </div>
+        <div class="lab-range">
+          70–99 mg/dL
+          <small>Pre-diabetes: 100–125<br>Diabetes: ≥ 126</small>
+        </div>
+        <div class="lab-why">A snapshot of your blood sugar after fasting. Elevated fasting glucose is often the first measurable sign of insulin resistance — years before diabetes develops. Caught early, it's reversible with lifestyle changes.</div>
+      </div>
+
+      <div class="lab-row">
+        <div>
+          <div class="lab-flag flag-liver">Liver</div>
+          <div class="lab-name">ALT</div>
+          <div class="lab-full">Alanine Aminotransferase</div>
+        </div>
+        <div class="lab-range">
+          7–56 U/L
+          <small>Elevated = possible<br>liver stress or damage.</small>
+        </div>
+        <div class="lab-why">A liver enzyme that rises when liver cells are inflamed or damaged. Elevated ALT can signal fatty liver disease, alcohol-related liver damage, medication effects, or viral hepatitis — often with zero symptoms.</div>
+      </div>
+
+      <div class="lab-row">
+        <div>
+          <div class="lab-flag flag-kidney">Kidney</div>
+          <div class="lab-name">Creatinine</div>
+          <div class="lab-full">Serum Creatinine</div>
+        </div>
+        <div class="lab-range">
+          0.6–1.2 mg/dL
+          <small>Higher in men and<br>those with more muscle mass.</small>
+        </div>
+        <div class="lab-why">A waste product cleared by the kidneys. When kidneys struggle, creatinine rises. This value is used to calculate your eGFR. Trending upward over time is a red flag even if the value stays "in range."</div>
+      </div>
+
+      <div class="lab-row">
+        <div>
+          <div class="lab-flag flag-critical">Critical</div>
+          <div class="lab-name">Sodium</div>
+          <div class="lab-full">Serum Sodium (Na⁺)</div>
+        </div>
+        <div class="lab-range">
+          135–145 mEq/L
+          <small>Outside this range<br>can be dangerous.</small>
+        </div>
+        <div class="lab-why">Controls fluid balance in every cell of your body. Abnormal sodium — high or low — causes confusion, seizures, and can be life-threatening. It's often a clue that something bigger is going on, from dehydration to heart or kidney failure.</div>
+      </div>
+
+      <div class="lab-row">
+        <div>
+          <div class="lab-flag flag-cardiac">Cardiac</div>
+          <div class="lab-name">TSH</div>
+          <div class="lab-full">Thyroid Stimulating Hormone</div>
+        </div>
+        <div class="lab-range">
+          0.4–4.0 mIU/L
+          <small>Interpretation depends<br>on clinical context.</small>
+        </div>
+        <div class="lab-why">Thyroid dysfunction is incredibly common — especially in women — and affects energy, weight, mood, heart rate, and fertility. Abnormal TSH is often dismissed until symptoms become impossible to ignore. Know your number.</div>
+      </div>
+
+      <div class="lab-row">
+        <div>
+          <div class="lab-flag flag-blood">Blood</div>
+          <div class="lab-name">Vitamin D</div>
+          <div class="lab-full">25-Hydroxyvitamin D</div>
+        </div>
+        <div class="lab-range">
+          30–100 ng/mL
+          <small>Deficiency: &lt; 20 ng/mL<br>Very common in the US.</small>
+        </div>
+        <div class="lab-why">Vitamin D deficiency is epidemic — affecting bone health, immune function, mood, and potentially cardiovascular risk. Most people are low and don't know it. A simple blood test and supplement can make a meaningful difference.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="guide-divider"><span>✦</span></div>
+
+  <!-- ===== GUIDE 3: DISCHARGE CHEAT SHEET ===== -->
+  <section id="discharge">
+    <div class="section-header">
+      <div class="section-tag">Guide 03 · Cheat Sheet</div>
+      <h2>How to Read Your<br><em>Discharge Papers</em></h2>
+      <p class="section-intro">You just spent time in the hospital. You're exhausted, overwhelmed, and handed a stack of papers on your way out the door. Here's what to actually look for — so you don't end up back in the ER within 30 days.</p>
+    </div>
+
+    <div class="cheatsheet-intro">
+      <p><strong>Why this matters:</strong> Roughly 1 in 5 Medicare patients is readmitted to the hospital within 30 days of discharge. Many of those readmissions are preventable. They happen because instructions weren't clear, medications weren't filled, or follow-up appointments weren't made. This guide helps you close those gaps.</p>
+    </div>
+
+    <div class="phase-block">
+      <div class="phase-label">Step 1 · Find These Documents First</div>
+      <div class="checklist">
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <strong>After Visit Summary (AVS)</strong>
+            <span>Usually the first page. Contains your diagnosis, what happened, and the basics. Start here.</span>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <strong>Discharge Instructions</strong>
+            <span>Condition-specific care instructions. Read every word. This is what your nurse reviewed with you before you left.</span>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <strong>Medication Reconciliation List</strong>
+            <span>Every medication you are supposed to take going home — including new ones, stopped ones, and changed doses.</span>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <strong>Follow-Up Appointment Sheet</strong>
+            <span>Who you need to see, when, and why. These appointments are not optional — they are part of your treatment.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase-block">
+      <div class="phase-label">Step 2 · Understand Your Diagnosis</div>
+      <div class="checklist">
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <strong>What was my primary diagnosis?</strong>
+            <span>Look for "Discharge Diagnosis" or "Principal Diagnosis." This is what the team determined was wrong. Write it down in plain language you understand.</span>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <strong>What tests or procedures were done?</strong>
+            <span>Look for a "Results" or "Procedures" section. Were there results still pending when you left? Those need follow-up.</span>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <strong>Are there any pending results?</strong>
+            <span>Cultures, biopsies, and some labs may not be back by the time you leave. These MUST be followed up — confirm who is tracking them.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase-block">
+      <div class="phase-label">Step 3 · Review Every Medication</div>
+      <div class="checklist">
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <strong>Which medications are NEW?</strong>
+            <span>Highlight anything you weren't taking before. Know the name, dose, what it's for, and for how long you should take it.</span>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <strong>Which medications were STOPPED?</strong>
+            <span>Sometimes home medications are held during hospitalization and not restarted. Confirm with your doctor before resuming anything that's missing from the list.</span>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <strong>Did any doses CHANGE?</strong>
+            <span>A medication you were on before might be at a different dose now. Do not assume your old prescription is still correct.</span>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <strong>Fill prescriptions before you go home</strong>
+            <span>Do not wait until you're feeling worse. Many hospitals have on-site pharmacies or can coordinate with your pharmacy before discharge.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase-block">
+      <div class="phase-label">Step 4 · Lock In Your Follow-Up</div>
+      <div class="checklist">
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <strong>Schedule your follow-up appointment within 7 days</strong>
+            <span>Studies show patients who see a doctor within 7 days of discharge are significantly less likely to be readmitted. Call the next day if you have to.</span>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <strong>Know who to call with questions</strong>
+            <span>Your discharge papers should include a contact number. Save it in your phone before you leave the building.</span>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <strong>Bring your discharge papers to every appointment</strong>
+            <span>The doctors you see after discharge may not have access to your hospital records yet. Be your own advocate — bring the paperwork.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <div class="warning-label">🔴 Return to the ER Immediately If You Experience:</div>
+      <ul>
+        <li>Chest pain, pressure, or tightness</li>
+        <li>Sudden shortness of breath or difficulty breathing</li>
+        <li>Signs of infection: fever over 101°F, increasing redness, warmth, or pus at any wound site</li>
+        <li>Severe abdominal pain, repeated vomiting, or inability to keep fluids down</li>
+        <li>New confusion, weakness, or difficulty speaking</li>
+        <li>Symptoms that are the same or worse than what brought you in</li>
+      </ul>
+    </div>
+
+    <div class="phase-block">
+      <div class="phase-label">Quick Reference · Questions to Ask Before Leaving</div>
+      <div class="checklist">
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <strong>"What is my diagnosis in plain English?"</strong>
+            <span>You deserve to understand what happened to your body.</span>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <strong>"Are there any test results still pending?"</strong>
+            <span>And who will contact me when they come back?</span>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <strong>"What symptoms should make me come back?"</strong>
+            <span>Get specific — don't leave without knowing your personal warning signs.</span>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <strong>"Is there anything I should NOT do when I go home?"</strong>
+            <span>Activity restrictions, dietary limits, driving — ask explicitly.</span>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <strong>"Who do I call if I have questions tonight?"</strong>
+            <span>Get the after-hours number before you walk out.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="guide-footer">
+  <div class="footer-logo">COGNITEVE_MD</div>
+  <p>Created by Dr. Ijeoma Ikedum · Hospitalist Physician & Health Educator</p>
+  <p>Follow along on TikTok & Instagram @COGNITEVE_MD for more patient education content.</p>
+  <p class="disclaimer">This guide is for educational purposes only and does not constitute medical advice. Always consult your healthcare provider for guidance specific to your health situation.</p>
+</footer>
+
+</body>
+</html>
